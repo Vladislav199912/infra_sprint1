@@ -1,0 +1,5 @@
+IP: 51.250.23.87;
+name_taski: https://vladisproject.sytes.net/;
+name_kittygram: https://infrasprint1.ddns.net/signin;
+login: Vladislav72;
+password: Vladas232818;
