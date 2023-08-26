@@ -5,15 +5,16 @@ from pathlib import Path
 from dotenv import load_dotenv
 
 load_dotenv()
-
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 
 SECRET_KEY = os.getenv('SECRET_KEY', default=True)
 
-DEBUG = False
+PARAM_FOR_DEBUG = os.getenv('DEBUG')
+DEBUG = PARAM_FOR_DEBUG
 
-ALLOWED_HOSTS = ['51.250.23.87', '127.0.0.1', 'localhost','infrasprint1.ddns.net']
+
+ALLOWED_HOSTS = ALLOWED_HOSTS = os.getenv('DJANGO_ALLOWED_HOSTS').split()
 
 INSTALLED_APPS = [
     'django.contrib.admin',
