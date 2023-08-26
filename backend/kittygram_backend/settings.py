@@ -1,5 +1,5 @@
 import os
-
+from distutils.util import strtobool
 from pathlib import Path
 
 from dotenv import load_dotenv
@@ -10,11 +10,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 SECRET_KEY = os.getenv('SECRET_KEY', default=True)
 
-PARAM_FOR_DEBUG = os.getenv('DEBUG')
-DEBUG = PARAM_FOR_DEBUG
+PARA_FOR_DEBUG = strtobool(os.getenv('PARAM_FOR_DEBUG', default=False))
 
-
-ALLOWED_HOSTS = os.getenv('DJANGO_ALLOWED_HOSTS').split()
+ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS').split()
 
 INSTALLED_APPS = [
     'django.contrib.admin',
